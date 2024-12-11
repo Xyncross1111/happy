@@ -1,0 +1,31 @@
+/* CountdownTimer.css */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Ensures full viewport height for centering */
+    text-align: center;
+  }
+  
+  .time-box {
+    text-align: center;
+    background-color: #282c34;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .number {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .label {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
