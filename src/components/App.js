@@ -1,7 +1,7 @@
 import '../stylesheets/App.css';
-import AudioPlayer from 'react-h5-audio-player';
+// import AudioPlayer from 'react-h5-audio-player';
 // import BackgroundMusic from './BackgroundMusic';
-import Lover from '../assets/audio/Lover.mp3';
+// import Lover from '../assets/audio/Lover.mp3';
 import CountdownTimer from './Countdown';
 
 function App() {
