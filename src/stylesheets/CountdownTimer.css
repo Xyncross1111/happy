@@ -28,7 +28,7 @@
 
 .countdown-timer {
   /* background: linear-gradient(45deg, #1870ed 0, #f18f88 100%); */
-  background-image: url(../assets/images/nightsky.jpeg);
+  background-image: url(/public/assets/images/nightsky.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Montserrat', 'sans-serif';
