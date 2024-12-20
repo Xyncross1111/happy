@@ -1,15 +1,14 @@
 import '../stylesheets/App.css';
 import AudioPlayer from 'react-h5-audio-player';
 // import BackgroundMusic from './BackgroundMusic';
-// import Lover from '../assets/audio/Lover.mp3';
+import Lover from '../assets/audio/Lover.mp3';
 import CountdownTimer from './Countdown';
-import Video from "./Video";
-import Playback from './Playback';
-import Flower from './Flower';
 
 function App() {
   return (
     <div className="App">
+      {/* <header className="App-header">
+        */}
         {/* <BackgroundMusic src={Lover} /> */}
         {/* <audio src={Lover} controls autoPlay loop /> */}
 
@@ -20,11 +19,9 @@ function App() {
                 showJumpControls={false}
             /> */}
 
-      {/* <CountdownTimer /> */}
+      {/* </header> */}
 
-      <Playback />
-      {/* <Flower /> */}
-      
+      <CountdownTimer />
     </div>
   );
 }
