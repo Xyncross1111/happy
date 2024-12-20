@@ -34,30 +34,37 @@ const CountdownTimer = () => {
 	// 	return <div className="countdown-timer">The event has passed!</div>;
 	// }
 
+	const [displayTimer, setDisplayTimer] = useState(true);
+
+	const handleDisplayTimer = () => {
+		setDisplayTimer(prev => !prev);
+	}
+
 	return (
-		<div className="countdown-timer">
+		<div className="countdown-timer background-image">
 			<h1>A little early, don't you think?</h1>
-			<div class="clock-container">
-				<div class="clock-col">
-					<p class="clock-day clock-timer"> {timeLeft.days} </p>
-					<p class="clock-label">Days</p>
-				</div>
+			<div class={`clock-container ${displayTimer ? "" : "hidden"}`}>
+					<div class="clock-col">
+						<p class="clock-day clock-timer"> {timeLeft.days} </p>
+						<p class="clock-label">Days</p>
+					</div>
 
-				<div class="clock-col">
-					<p class="clock-hours clock-timer"> {timeLeft.hours} </p>
-					<p class="clock-label">Hours</p>
-				</div>
+					<div class="clock-col">
+						<p class="clock-hours clock-timer"> {timeLeft.hours} </p>
+						<p class="clock-label">Hours</p>
+					</div>
 
-				<div class="clock-col">
-					<p class="clock-minutes clock-timer"> {timeLeft.minutes} </p>
-					<p class="clock-label">Minutes</p>
-				</div>
+					<div class="clock-col">
+						<p class="clock-minutes clock-timer"> {timeLeft.minutes} </p>
+						<p class="clock-label">Minutes</p>
+					</div>
 
-				<div class="clock-col">
-					<p class="clock-seconds clock-timer"> {timeLeft.seconds} </p>
-					<p class="clock-label">Seconds</p>
+					<div class="clock-col">
+						<p class="clock-seconds clock-timer"> {timeLeft.seconds} </p>
+						<p class="clock-label">Seconds</p>
+					</div>
 				</div>
-			</div>
+			<button onClick={handleDisplayTimer}>How about something more<span className="shiny-text">familiar</span> .</button>
 		</div>
 	);
 };

@@ -1,13 +1,60 @@
-  @font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+.countdown-timer {
+  background-image: url(../assets/images/nightsky.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Montserrat', 'sans-serif';
+  min-height: 100vh;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.countdown-timer h1 {
+  color: white;
+  font-size: 2rem;
 }
 
 .countdown-timer span {
   margin: 0 1rem;
+}
+
+.countdown-timer button {
+  color: white;
+  font-size: 2rem;
+  font-family: 'Montserrat', 'sans-serif';
+  margin-bottom: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.clock-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+  font-size: 2rem;
+  background-color: #080808;
+  border-radius: 5px;
+  padding: 60px 20px;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  transition: opacity 0.5s ease, visibility 1s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.clock-container.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.clock-col {
+  text-align: center;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+  min-width: 90px;
+  position: relative;
 }
 
 .clock-day:before {
@@ -24,43 +71,6 @@
 
 .clock-seconds:before {
   content: var(--timer-seconds);
-}
-
-.countdown-timer {
-  /* background: linear-gradient(45deg, #1870ed 0, #f18f88 100%); */
-  background-image: url(../assets/images/nightsky.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Montserrat', 'sans-serif';
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.countdown-timer h1 {
-  color: white
-}
-
-.clock-container {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  color: white;
-  font-size: 2rem;
-  background-color: #080808;
-  border-radius: 5px;
-  padding: 60px 20px;
-  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.15), 0 15px 90px 30px rgba(0, 0, 0, 0.25);
-  display: flex;
-}
-
-.clock-col {
-  text-align: center;
-  margin-right: 40px;
-  margin-left: 40px;
-  min-width: 90px;
-  position: relative;
 }
 
 .clock-col:not(:last-child):before,
@@ -96,11 +106,46 @@
   margin-top: 10px;
 }
 
+.countdown-timer button span {
+  background: linear-gradient(to bottom right, #ec51ec, #5100ff);
+  font-weight: bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.shiny-text {
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  animation: shine 3s infinite, sparkle 2s infinite alternate;
+}
+
 @media (max-width: 825px) {
+
+  .countdown-timer {
+    padding: 1.5rem;
+    background-image: url(../assets/images/nightsky90.jpeg);
+    /* justify-content: space-between; */
+  }
+
   .clock-container {
     flex-direction: column;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .clock-col+.clock-col {
